@@ -6,8 +6,7 @@
 </p>
 
 <p align="center">
-  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License"></a>
-  <a href="https://pypi.org/project/whaleshell/"><img src="https://img.shields.io/badge/pip-whaleshell-blue" alt="pip"></a>
+  <a href="https://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/License-Apache--2.0-blue.svg" alt="License"></a>
 </p>
 
 <p align="center">
@@ -18,6 +17,8 @@
 
 ## Overview
 
+The [gateway guide](https://whaleshell.github.io/guides/gateway/) describes the server this client calls. For OpenShell parity, see [compatibility status](https://whaleshell.github.io/reference/openshell-compatibility/).
+
 HTTP client for **whaleshell-gateway** (registry + relay exec). Interactive TTY stays on the CLI (`whaleshell connect`).
 
 ---
@@ -25,10 +26,10 @@ HTTP client for **whaleshell-gateway** (registry + relay exec). Interactive TTY 
 ## Installation
 
 ```bash
-pip install whaleshell
-# or editable from the hub workspace:
 pip install -e .
 ```
+
+Run the command in this checkout. The `whaleshell` package is not published on PyPI yet.
 
 ---
 
@@ -55,4 +56,4 @@ with Client("http://127.0.0.1:7443") as c:
 
 ## License
 
-MIT © whaleshell
+Apache-2.0 © whaleshell

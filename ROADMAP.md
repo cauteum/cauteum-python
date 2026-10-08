@@ -1,6 +1,6 @@
 # Roadmap — whaleshell-python
 
-Status: **v0.1.0-alpha.1** (alpha) · HTTP client for [whaleshell-gateway](https://github.com/whaleshell/whaleshell-gateway)
+Status: **v0.1.0-beta.1** (beta) · HTTP client for [whaleshell-gateway](https://github.com/whaleshell/whaleshell-gateway)
 
 ## This module
 
