@@ -32,6 +32,226 @@ SANDBOX_LOG_WATCH_KIND_RESET: SandboxLogWatchKind
 SANDBOX_LOG_WATCH_KIND_LINE: SandboxLogWatchKind
 SANDBOX_LOG_WATCH_KIND_HEARTBEAT: SandboxLogWatchKind
 
+class GetGatewayInfoRequest(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class GetGatewayInfoResponse(_message.Message):
+    __slots__ = ("gateway_id", "sandbox_count", "auth_mode", "compute_drivers", "credential_drivers", "default_credential_driver", "allow_unauthenticated", "oidc_issuer", "ssh_session_ttl_seconds", "secrets_kek_source", "secrets_kek_pinned", "secrets_kek_warning", "secrets_kek_format", "secrets_kek_migration_needed")
+    GATEWAY_ID_FIELD_NUMBER: _ClassVar[int]
+    SANDBOX_COUNT_FIELD_NUMBER: _ClassVar[int]
+    AUTH_MODE_FIELD_NUMBER: _ClassVar[int]
+    COMPUTE_DRIVERS_FIELD_NUMBER: _ClassVar[int]
+    CREDENTIAL_DRIVERS_FIELD_NUMBER: _ClassVar[int]
+    DEFAULT_CREDENTIAL_DRIVER_FIELD_NUMBER: _ClassVar[int]
+    ALLOW_UNAUTHENTICATED_FIELD_NUMBER: _ClassVar[int]
+    OIDC_ISSUER_FIELD_NUMBER: _ClassVar[int]
+    SSH_SESSION_TTL_SECONDS_FIELD_NUMBER: _ClassVar[int]
+    SECRETS_KEK_SOURCE_FIELD_NUMBER: _ClassVar[int]
+    SECRETS_KEK_PINNED_FIELD_NUMBER: _ClassVar[int]
+    SECRETS_KEK_WARNING_FIELD_NUMBER: _ClassVar[int]
+    SECRETS_KEK_FORMAT_FIELD_NUMBER: _ClassVar[int]
+    SECRETS_KEK_MIGRATION_NEEDED_FIELD_NUMBER: _ClassVar[int]
+    gateway_id: str
+    sandbox_count: int
+    auth_mode: str
+    compute_drivers: _containers.RepeatedCompositeFieldContainer[ComputeDriverStatus]
+    credential_drivers: _containers.RepeatedScalarFieldContainer[str]
+    default_credential_driver: str
+    allow_unauthenticated: bool
+    oidc_issuer: str
+    ssh_session_ttl_seconds: int
+    secrets_kek_source: str
+    secrets_kek_pinned: bool
+    secrets_kek_warning: str
+    secrets_kek_format: str
+    secrets_kek_migration_needed: bool
+    def __init__(self, gateway_id: _Optional[str] = ..., sandbox_count: _Optional[int] = ..., auth_mode: _Optional[str] = ..., compute_drivers: _Optional[_Iterable[_Union[ComputeDriverStatus, _Mapping]]] = ..., credential_drivers: _Optional[_Iterable[str]] = ..., default_credential_driver: _Optional[str] = ..., allow_unauthenticated: bool = ..., oidc_issuer: _Optional[str] = ..., ssh_session_ttl_seconds: _Optional[int] = ..., secrets_kek_source: _Optional[str] = ..., secrets_kek_pinned: bool = ..., secrets_kek_warning: _Optional[str] = ..., secrets_kek_format: _Optional[str] = ..., secrets_kek_migration_needed: bool = ...) -> None: ...
+
+class ComputeDriverStatus(_message.Message):
+    __slots__ = ("name", "state")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    STATE_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    state: str
+    def __init__(self, name: _Optional[str] = ..., state: _Optional[str] = ...) -> None: ...
+
+class GetManagedSandboxRequest(_message.Message):
+    __slots__ = ("workspace", "name")
+    WORKSPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    workspace: str
+    name: str
+    def __init__(self, workspace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class GetManagedSandboxResponse(_message.Message):
+    __slots__ = ("name", "runtime_id", "image", "workspace", "network", "status", "labels", "base_policy_yaml", "attached_providers", "resource_version")
+    class LabelsEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    RUNTIME_ID_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_FIELD_NUMBER: _ClassVar[int]
+    WORKSPACE_FIELD_NUMBER: _ClassVar[int]
+    NETWORK_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    LABELS_FIELD_NUMBER: _ClassVar[int]
+    BASE_POLICY_YAML_FIELD_NUMBER: _ClassVar[int]
+    ATTACHED_PROVIDERS_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_VERSION_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    runtime_id: str
+    image: str
+    workspace: str
+    network: str
+    status: str
+    labels: _containers.ScalarMap[str, str]
+    base_policy_yaml: str
+    attached_providers: _containers.RepeatedScalarFieldContainer[str]
+    resource_version: int
+    def __init__(self, name: _Optional[str] = ..., runtime_id: _Optional[str] = ..., image: _Optional[str] = ..., workspace: _Optional[str] = ..., network: _Optional[str] = ..., status: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., base_policy_yaml: _Optional[str] = ..., attached_providers: _Optional[_Iterable[str]] = ..., resource_version: _Optional[int] = ...) -> None: ...
+
+class SyncManagedSandboxRequest(_message.Message):
+    __slots__ = ("workspace", "name", "runtime_id", "image", "network", "status", "labels", "base_policy_yaml", "attached_providers")
+    class LabelsEntry(_message.Message):
+        __slots__ = ("key", "value")
+        KEY_FIELD_NUMBER: _ClassVar[int]
+        VALUE_FIELD_NUMBER: _ClassVar[int]
+        key: str
+        value: str
+        def __init__(self, key: _Optional[str] = ..., value: _Optional[str] = ...) -> None: ...
+    WORKSPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    RUNTIME_ID_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_FIELD_NUMBER: _ClassVar[int]
+    NETWORK_FIELD_NUMBER: _ClassVar[int]
+    STATUS_FIELD_NUMBER: _ClassVar[int]
+    LABELS_FIELD_NUMBER: _ClassVar[int]
+    BASE_POLICY_YAML_FIELD_NUMBER: _ClassVar[int]
+    ATTACHED_PROVIDERS_FIELD_NUMBER: _ClassVar[int]
+    workspace: str
+    name: str
+    runtime_id: str
+    image: str
+    network: str
+    status: str
+    labels: _containers.ScalarMap[str, str]
+    base_policy_yaml: str
+    attached_providers: _containers.RepeatedScalarFieldContainer[str]
+    def __init__(self, workspace: _Optional[str] = ..., name: _Optional[str] = ..., runtime_id: _Optional[str] = ..., image: _Optional[str] = ..., network: _Optional[str] = ..., status: _Optional[str] = ..., labels: _Optional[_Mapping[str, str]] = ..., base_policy_yaml: _Optional[str] = ..., attached_providers: _Optional[_Iterable[str]] = ...) -> None: ...
+
+class SyncManagedSandboxResponse(_message.Message):
+    __slots__ = ("resource_version",)
+    RESOURCE_VERSION_FIELD_NUMBER: _ClassVar[int]
+    resource_version: int
+    def __init__(self, resource_version: _Optional[int] = ...) -> None: ...
+
+class DeleteManagedSandboxRequest(_message.Message):
+    __slots__ = ("workspace", "name")
+    WORKSPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    workspace: str
+    name: str
+    def __init__(self, workspace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class DeleteManagedSandboxResponse(_message.Message):
+    __slots__ = ("deleted",)
+    DELETED_FIELD_NUMBER: _ClassVar[int]
+    deleted: bool
+    def __init__(self, deleted: bool = ...) -> None: ...
+
+class IssueManagedSandboxTokenRequest(_message.Message):
+    __slots__ = ("workspace", "name")
+    WORKSPACE_FIELD_NUMBER: _ClassVar[int]
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    workspace: str
+    name: str
+    def __init__(self, workspace: _Optional[str] = ..., name: _Optional[str] = ...) -> None: ...
+
+class IssueManagedSandboxTokenResponse(_message.Message):
+    __slots__ = ("token",)
+    TOKEN_FIELD_NUMBER: _ClassVar[int]
+    token: str
+    def __init__(self, token: _Optional[str] = ...) -> None: ...
+
+class AppendSandboxLogsRequest(_message.Message):
+    __slots__ = ("workspace", "sandbox_name", "lines")
+    WORKSPACE_FIELD_NUMBER: _ClassVar[int]
+    SANDBOX_NAME_FIELD_NUMBER: _ClassVar[int]
+    LINES_FIELD_NUMBER: _ClassVar[int]
+    workspace: str
+    sandbox_name: str
+    lines: _containers.RepeatedCompositeFieldContainer[ClientLogLine]
+    def __init__(self, workspace: _Optional[str] = ..., sandbox_name: _Optional[str] = ..., lines: _Optional[_Iterable[_Union[ClientLogLine, _Mapping]]] = ...) -> None: ...
+
+class ClientLogLine(_message.Message):
+    __slots__ = ("timestamp_unix_ms", "source", "level", "text")
+    TIMESTAMP_UNIX_MS_FIELD_NUMBER: _ClassVar[int]
+    SOURCE_FIELD_NUMBER: _ClassVar[int]
+    LEVEL_FIELD_NUMBER: _ClassVar[int]
+    TEXT_FIELD_NUMBER: _ClassVar[int]
+    timestamp_unix_ms: int
+    source: str
+    level: str
+    text: str
+    def __init__(self, timestamp_unix_ms: _Optional[int] = ..., source: _Optional[str] = ..., level: _Optional[str] = ..., text: _Optional[str] = ...) -> None: ...
+
+class AppendSandboxLogsResponse(_message.Message):
+    __slots__ = ("accepted",)
+    ACCEPTED_FIELD_NUMBER: _ClassVar[int]
+    accepted: int
+    def __init__(self, accepted: _Optional[int] = ...) -> None: ...
+
+class GetInferenceRouteRequest(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class GetInferenceRouteResponse(_message.Message):
+    __slots__ = ("provider", "model", "timeout_sec", "resource_version")
+    PROVIDER_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
+    TIMEOUT_SEC_FIELD_NUMBER: _ClassVar[int]
+    RESOURCE_VERSION_FIELD_NUMBER: _ClassVar[int]
+    provider: str
+    model: str
+    timeout_sec: int
+    resource_version: int
+    def __init__(self, provider: _Optional[str] = ..., model: _Optional[str] = ..., timeout_sec: _Optional[int] = ..., resource_version: _Optional[int] = ...) -> None: ...
+
+class UpdateInferenceRouteRequest(_message.Message):
+    __slots__ = ("provider", "model", "timeout_sec", "expected_resource_version")
+    PROVIDER_FIELD_NUMBER: _ClassVar[int]
+    MODEL_FIELD_NUMBER: _ClassVar[int]
+    TIMEOUT_SEC_FIELD_NUMBER: _ClassVar[int]
+    EXPECTED_RESOURCE_VERSION_FIELD_NUMBER: _ClassVar[int]
+    provider: str
+    model: str
+    timeout_sec: int
+    expected_resource_version: int
+    def __init__(self, provider: _Optional[str] = ..., model: _Optional[str] = ..., timeout_sec: _Optional[int] = ..., expected_resource_version: _Optional[int] = ...) -> None: ...
+
+class UpdateInferenceRouteResponse(_message.Message):
+    __slots__ = ("resource_version",)
+    RESOURCE_VERSION_FIELD_NUMBER: _ClassVar[int]
+    resource_version: int
+    def __init__(self, resource_version: _Optional[int] = ...) -> None: ...
+
+class ClearInferenceRouteRequest(_message.Message):
+    __slots__ = ("expected_resource_version",)
+    EXPECTED_RESOURCE_VERSION_FIELD_NUMBER: _ClassVar[int]
+    expected_resource_version: int
+    def __init__(self, expected_resource_version: _Optional[int] = ...) -> None: ...
+
+class ClearInferenceRouteResponse(_message.Message):
+    __slots__ = ("cleared",)
+    CLEARED_FIELD_NUMBER: _ClassVar[int]
+    cleared: bool
+    def __init__(self, cleared: bool = ...) -> None: ...
+
 class GetGlobalPolicyRequest(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...

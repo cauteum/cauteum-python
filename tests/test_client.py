@@ -9,9 +9,9 @@ import grpc
 import httpx
 import pytest
 
-from cauteum import Client, ConnectUnsupported, Sandbox
-from cauteum.control.v1 import console_pb2, console_pb2_grpc
-from cauteum._proto.openshell import openshell_pb2, openshell_pb2_grpc
+from cautem import Client, ConnectUnsupported, Sandbox
+from cautem.control.v1 import console_pb2, console_pb2_grpc
+from cautem._proto.openshell import openshell_pb2, openshell_pb2_grpc
 
 
 class _Control(console_pb2_grpc.SandboxServiceServicer):
@@ -118,7 +118,7 @@ def test_crud_and_exec(gateway):
 
 def test_token_defaults_to_gateway_environment(gateway, monkeypatch):
     gateway_url, control = gateway
-    monkeypatch.setenv("CAUTEUM_GATEWAY_TOKEN", "env-token")
+    monkeypatch.setenv("CAUTEM_GATEWAY_TOKEN", "env-token")
     with Client(gateway_url) as client:
         assert client.list()[0].name == "demo"
     assert control.auth == ["Bearer env-token"]

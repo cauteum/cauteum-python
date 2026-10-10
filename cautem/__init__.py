@@ -1,4 +1,4 @@
-"""cauteum — Python SDK for the cauteum gateway."""
+"""cautem — Python SDK for the cautem gateway."""
 
 from .client import Client, ConnectUnsupported, ExecResult, Sandbox
 

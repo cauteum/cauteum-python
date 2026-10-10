@@ -1,7 +1,7 @@
-<h1 align="center">cauteum (Python)</h1>
+<h1 align="center">cautem (Python)</h1>
 
 <p align="center">
-  <strong>Python SDK for cauteum-gateway</strong><br>
+  <strong>Python SDK for cautem-gateway</strong><br>
   Manage sandboxes over gRPC and execute through OpenShell RPC.
 </p>
 
@@ -10,18 +10,18 @@
 </p>
 
 <p align="center">
-  <sub>Part of the <a href="https://github.com/cautem">cauteum</a> ecosystem</sub>
+  <sub>Part of the <a href="https://github.com/cautem">cautem</a> ecosystem</sub>
 </p>
 
 ---
 
 ## Overview
 
-The [gateway guide](https://cautem.github.io/cauteum-haven.github.io/guides/gateway/) describes the server this client calls. For OpenShell parity, see [compatibility status](https://cautem.github.io/cauteum-haven.github.io/reference/openshell-compatibility/).
+The [gateway guide](https://cautem.github.io/sandbox.dev/guides/gateway/) describes the server this client calls. For OpenShell parity, see [compatibility status](https://cautem.github.io/sandbox.dev/reference/openshell-compatibility/).
 
-The SDK uses native gRPC for `cauteum.control.v1` and the pinned OpenShell
+The SDK uses native gRPC for `cautem.control.v1` and the pinned OpenShell
 `ExecSandbox` method. HTTP remains for the transport health probe. Interactive
-TTY stays on the CLI (`cauteum connect`).
+TTY stays on the CLI (`cautem connect`).
 
 ---
 
@@ -31,14 +31,14 @@ TTY stays on the CLI (`cauteum connect`).
 pip install -e .
 ```
 
-Run the command in this checkout. The `cauteum` package is not published on PyPI yet.
+Run the command in this checkout. The `cautem` package is not published on PyPI yet.
 
 ---
 
 ## Quick Start
 
 ```python
-from cauteum import Client, Sandbox
+from cautem import Client, Sandbox
 
 with Client("http://127.0.0.1:7443") as c:
     c.create(Sandbox(name="demo", image="python:3.12-slim"))
@@ -46,7 +46,7 @@ with Client("http://127.0.0.1:7443") as c:
     print(c.exec("demo", "echo", "hi"))
 ```
 
-Set `CAUTEUM_GATEWAY_TOKEN` or pass `token="…"` to `Client` when the
+Set `CAUTEM_GATEWAY_TOKEN` or pass `token="…"` to `Client` when the
 gateway requires bearer authentication. RPC failures are raised as `grpc.RpcError`;
 the health probe uses `httpx` exceptions.
 
@@ -61,9 +61,9 @@ after updating the gateway control Proto or pinned OpenShell source.
 | Resource | Link |
 |----------|------|
 | Organization | [https://github.com/cautem](https://github.com/cautem) |
-| Go SDK | [cautem/cauteum-sdk](https://github.com/cautem/cauteum-sdk) |
-| Gateway | [cautem/cauteum-gateway](https://github.com/cautem/cauteum-gateway) |
+| Go SDK | [cautem/cautem-sdk](https://github.com/cautem/cautem-sdk) |
+| Gateway | [cautem/cautem-gateway](https://github.com/cautem/cautem-gateway) |
 
 ## License
 
-Apache-2.0 © cauteum
+Apache-2.0 © cautem

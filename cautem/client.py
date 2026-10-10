@@ -1,4 +1,4 @@
-"""gRPC client for cauteum-gateway and the pinned OpenShell contract."""
+"""gRPC client for cautem-gateway and the pinned OpenShell contract."""
 
 from __future__ import annotations
 
@@ -16,7 +16,7 @@ from ._proto.openshell import openshell_pb2, openshell_pb2_grpc
 
 
 class ConnectUnsupported(RuntimeError):
-    """Interactive connect stays on the CLI (`cauteum connect <name>`)."""
+    """Interactive connect stays on the CLI (`cautem connect <name>`)."""
 
 
 @dataclass
@@ -53,7 +53,7 @@ class Client:
         bearer = (
             token
             if token is not None
-            else os.getenv("CAUTEUM_GATEWAY_TOKEN", "")
+            else os.getenv("CAUTEM_GATEWAY_TOKEN", "")
         ).strip()
         self._metadata = (("authorization", f"Bearer {bearer}"),) if bearer else ()
         self._http = httpx.Client(base_url=self.base_url, timeout=timeout)
@@ -205,7 +205,7 @@ class Client:
 
     def connect(self, name: str) -> None:
         raise ConnectUnsupported(
-            f"interactive connect is not supported; use: cauteum connect {name}"
+            f"interactive connect is not supported; use: cautem connect {name}"
         )
 
 

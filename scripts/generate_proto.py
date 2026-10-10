@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Cauteum and pinned OpenShell Python gRPC clients."""
+"""Generate cautem and pinned OpenShell Python gRPC clients."""
 
 from __future__ import annotations
 
@@ -11,9 +11,9 @@ from pathlib import Path
 
 MODULE_ROOT = Path(__file__).resolve().parents[1]
 WORKSPACE_ROOT = MODULE_ROOT.parent
-GATEWAY_PROTO = WORKSPACE_ROOT / "cauteum-gateway" / "api" / "proto"
+GATEWAY_PROTO = WORKSPACE_ROOT / "cautem-gateway" / "api" / "proto"
 UPSTREAM_PROTO = WORKSPACE_ROOT / "tools" / "upstream" / "openshell" / "proto"
-OPEN_SHELL_OUT = MODULE_ROOT / "cauteum" / "_proto" / "openshell"
+OPEN_SHELL_OUT = MODULE_ROOT / "cautem" / "_proto" / "openshell"
 
 
 def generate(proto_root: Path, output: Path, files: list[str]) -> None:
@@ -37,7 +37,7 @@ def main() -> None:
     generate(
         GATEWAY_PROTO,
         MODULE_ROOT,
-        ["cauteum/control/v1/console.proto"],
+        ["cautem/control/v1/console.proto"],
     )
     generate(
         UPSTREAM_PROTO,
@@ -65,9 +65,9 @@ def main() -> None:
         path.write_text(contents)
 
     for directory in (
-        MODULE_ROOT / "cauteum" / "control",
-        MODULE_ROOT / "cauteum" / "control" / "v1",
-        MODULE_ROOT / "cauteum" / "_proto",
+        MODULE_ROOT / "cautem" / "control",
+        MODULE_ROOT / "cautem" / "control" / "v1",
+        MODULE_ROOT / "cautem" / "_proto",
         OPEN_SHELL_OUT,
     ):
         directory.mkdir(parents=True, exist_ok=True)
