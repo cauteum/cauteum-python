@@ -2,9 +2,15 @@
 
 ## Unreleased
 
+## [0.1.6] - 2026-10-11
+
 ### Changed
 
-- Move overview, sandbox CRUD, and command execution from REST endpoints to native `cauteum.control.v1` and pinned OpenShell gRPC clients. The beta Python API now requires sandbox images for create operations.
+- Rename the installable package and SDK imports to `cautem`.
+
+### Changed
+
+- Move overview, sandbox CRUD, and command execution from REST endpoints to native `cautem.control.v1` and pinned OpenShell gRPC clients. The beta Python API now requires sandbox images for create operations.
 - Check in reproducible generated Python protobuf/gRPC clients and declare their runtime dependencies.
 - Retain HTTP only for the unauthenticated health probe.
 

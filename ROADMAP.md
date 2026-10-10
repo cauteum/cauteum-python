@@ -1,6 +1,6 @@
-# Roadmap — cauteum-python
+# Roadmap — cautem-python
 
-Status: **v0.1.4** (stable numbered source release) · HTTP client for [cauteum-gateway](https://github.com/cauteum-haven/cauteum-gateway)
+Status: **v0.1.6** (stable numbered source release) · HTTP client for [cautem-gateway](https://github.com/cautem/cautem-gateway)
 
 ## This module
 
@@ -8,7 +8,7 @@ Status: **v0.1.4** (stable numbered source release) · HTTP client for [cauteum-
 |----|------|-------|
 | Y1 | **API parity** | Match Go SDK: proposals, providers, effective-policy |
 | Y2 | **Typing** | Publish typed stubs / py.typed |
-| Y3 | **PyPI** | Versioned `cauteum` package aligned with gateway alpha |
+| Y3 | **PyPI** | Versioned `cautem` package aligned with gateway alpha |
 
 ## Release
 
