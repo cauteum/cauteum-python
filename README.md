@@ -10,14 +10,14 @@
 </p>
 
 <p align="center">
-  <sub>Part of the <a href="https://github.com/cauteum-haven">cauteum</a> ecosystem</sub>
+  <sub>Part of the <a href="https://github.com/cautem">cauteum</a> ecosystem</sub>
 </p>
 
 ---
 
 ## Overview
 
-The [gateway guide](https://cauteum-haven.github.io/guides/gateway/) describes the server this client calls. For OpenShell parity, see [compatibility status](https://cauteum-haven.github.io/reference/openshell-compatibility/).
+The [gateway guide](https://cautem.github.io/cauteum-haven.github.io/guides/gateway/) describes the server this client calls. For OpenShell parity, see [compatibility status](https://cautem.github.io/cauteum-haven.github.io/reference/openshell-compatibility/).
 
 The SDK uses native gRPC for `cauteum.control.v1` and the pinned OpenShell
 `ExecSandbox` method. HTTP remains for the transport health probe. Interactive
@@ -60,9 +60,9 @@ after updating the gateway control Proto or pinned OpenShell source.
 
 | Resource | Link |
 |----------|------|
-| Organization | [https://github.com/cauteum](https://github.com/cauteum-haven) |
-| Go SDK | [cauteum-haven/cauteum-sdk](https://github.com/cauteum-haven/cauteum-sdk) |
-| Gateway | [cauteum-haven/cauteum-gateway](https://github.com/cauteum-haven/cauteum-gateway) |
+| Organization | [https://github.com/cautem](https://github.com/cautem) |
+| Go SDK | [cautem/cauteum-sdk](https://github.com/cautem/cauteum-sdk) |
+| Gateway | [cautem/cauteum-gateway](https://github.com/cautem/cauteum-gateway) |
 
 ## License
 
