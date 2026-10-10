@@ -1,6 +1,6 @@
 # Roadmap — cauteum-python
 
-Status: **v0.1.0-beta.1** (beta) · HTTP client for [cauteum-gateway](https://github.com/cauteum-haven/cauteum-gateway)
+Status: **v0.1.4** (stable numbered source release) · HTTP client for [cauteum-gateway](https://github.com/cauteum-haven/cauteum-gateway)
 
 ## This module
 
